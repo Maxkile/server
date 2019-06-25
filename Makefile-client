@@ -1,0 +1,13 @@
+.PHONY: all clean install uninstall
+
+client: client.o Graph_Sort.o
+	g++ -Wall -Werror client.o Graph_Sort.o -o client
+
+client.o: client.cpp
+	g++ -Wall -Werror -c client.cpp
+
+Graph_Sort: Graph_Sort.cpp
+	g++ -Wall -Werror -c Graph_Sort.cpp
+
+clean:
+	rm -f *.o
